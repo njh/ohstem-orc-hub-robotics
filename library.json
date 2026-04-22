@@ -1,7 +1,7 @@
 {
   "name": "OhStemRobotics",
-  "version": "0.1.0",
-  "description": "Arduino/PlatformIO robotics library ported from the OhStem Yolo Uno Python extension.",
+  "version": "0.2.0",
+  "description": "Robotics library for Arduino IDE and PlatformIO with lesson-style robot examples.",
   "keywords": [
     "robotics",
     "ohstem",
@@ -11,8 +11,8 @@
     "arduino"
   ],
   "repository": {
-    "type": "local",
-    "url": "."
+    "type": "git",
+    "url": "https://github.com/truongphat230799/ohstem-orc-hub-robotics.git"
   },
   "frameworks": "arduino",
   "platforms": "*",

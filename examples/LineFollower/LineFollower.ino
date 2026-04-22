@@ -2,6 +2,8 @@
 
 using namespace ohstem::robotics;
 
+// Two drive motors and one I2C line sensor are enough for a simple 2WD
+// line-following robot.
 MotorDriverV2 motorDriver(Wire);
 DCMotor leftMotor(motorDriver, E1, true);
 DCMotor rightMotor(motorDriver, E2, true);
@@ -29,6 +31,7 @@ void setup() {
   leftMotor.setEncoder(600, 11, 34);
   rightMotor.setEncoder(600, 11, 34);
 
+  // The line-follow helper uses the attached sensor plus min/max drive speed.
   robot.speed(55, 35);
   robot.lineSensor(&lineSensor);
 
@@ -36,6 +39,7 @@ void setup() {
 }
 
 void loop() {
+  // Read the current line state and let the drive base decide the correction.
   robot.followLine(true, lineSensor.check());
   delay(10);
 }
